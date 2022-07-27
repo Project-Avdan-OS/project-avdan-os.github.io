@@ -294,14 +294,14 @@ body{font-family: Inter;}blockquote{border-color: #005af0;}div[submit-success] >
                 </header>
                 <div class="content">
                   <p class="mbr-text mbr-fonts-style display-4">
-                    Yes! It is completely free as it is open-source.
+                    <s>Yes! It is completely free as it is open-source.</s><br>Not for now. We will release it to the public soon™️.
                   </p>
                 </div>
             </section>
               <section>
                 <header class="section-title" role="button" aria-controls="0" aria-expanded="false" tabindex="0"> 
                     <div class="header_title"> 
-                        <h4 class="tab-title mbr-bold mbr-black mbr-fonts-style display-7">How to download avdan OS?</h4> 
+                        <h4 class="tab-title mbr-bold mbr-black mbr-fonts-style display-7">How to download AvdanOS?</h4> 
                         <div class="iconfont-wrapper">
                             <span class="mbr-iconfont mbr-bold mobi-mbri-arrow-down mobi-mbri"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M1.4 4.6L12 15.2 22.6 4.6 24 6 12 18 0 6z"></path></svg></span>
                         </div> 
@@ -309,7 +309,7 @@ body{font-family: Inter;}blockquote{border-color: #005af0;}div[submit-success] >
                 </header>
                 <div class="content">
                   <p class="mbr-text mbr-fonts-style display-4">
-                    AvdanOS is not yet available. But the team is making efforts to serve it to you asap!
+                    AvdanOS is not yet available. But the team is making efforts to serve it to you A.S.A.P.!
                   </p>
                 </div>
             </section>
@@ -335,7 +335,7 @@ body{font-family: Inter;}blockquote{border-color: #005af0;}div[submit-success] >
                     If you are a developer or a designer then please join us to make it real. Even if you're not, join us to show your support.</h3>
             </div>
             <div class="btn-container mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-4 align-center mbr-flex">
-                <div class="mbr-section-btn mbr-m-auto"><a class="btn btn-white display-4" href="https://discord.io/avdanos" target="_blank"><span class="mbrib-arrow-next mbr-iconfont mbr-iconfont-btn"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor">
+                <div class="mbr-section-btn mbr-m-auto"><a class="btn btn-white display-4" href="https://discord.io/" target="_blank"><span class="mbrib-arrow-next mbr-iconfont mbr-iconfont-btn"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor">
 
 <path d="M8.29 1.714l14.030 13.986c0.93 0.93 2.292-0.52 1.376-1.436l-14.028-13.984c-0.884-0.884-2.276 0.54-1.38 1.434zM8.29 30.286l12.030-11.986c0.932-0.93 2.294 0.52 1.376 1.436l-12.028 11.988c-0.884 0.88-2.276-0.544-1.38-1.44z"></path>
 </svg></span>Join Discord</a></div>
@@ -353,12 +353,11 @@ body{font-family: Inter;}blockquote{border-color: #005af0;}div[submit-success] >
     <div class="container">
         <div class="align-center mbr-p-1">
             <p class="mbr-text mbr-white mbr-fonts-style display-7">
-                © Copyright 2022 AvdanOS - All Rights Reserved<br>
-                All credits to Avdan (<a href="https://www.youtube.com/c/Avdan">YouTube Channel</a>)
+               Copyright © 2022 AvdanOS - All Rights Reserved
             </p>
         </div>
     </div>
-</section><section class="display-7" id="hider" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/1392232" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">Created with Mobirise ‌</p><a style="z-index:1" href="https://mobirise.com/offline-website-builder.html">Free Offline Site Builder</a></section>
+</section><section class="display-7" id="hider" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap; align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/1392232" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">Created with Mobirise ‌</p><a style="z-index:1" href="https://mobirise.com/offline-website-builder.html">Free Offline Site Builder</a></section>
   
   
 
@@ -368,8 +367,36 @@ body{font-family: Inter;}blockquote{border-color: #005af0;}div[submit-success] >
       document.getElementById("hider").style.display = "none";
     }
   </script>
-<script>
-    window.addEventListener('load', addDarkmodeWidget);
-</script>
+  <script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      // darkmode
+      function color(select, value){
+        var styline = document.querySelectorAll(select);
+        for (var i = 0, max = styline.length; i < max; i++) {
+          styline[i].style.color = value;
+        }
+      };
+      function bgcolor(select, value){
+        var styline = document.querySelectorAll(select);
+        for (var i = 0, max = styline.length; i < max; i++) {
+          styline[i].style.backgroundColor = value;
+        }
+      };
+      function bg(select, value){
+        var styline = document.querySelectorAll(select);
+        for (var i = 0, max = styline.length; i < max; i++) {
+          styline[i].style.background = value;
+        }
+      };
+      bgcolor('section', '#22272e');
+      bg('div.tab-content.mbr-p-4.text-black', '#444c56');
+      bg('header.section-title.i-amphtml-accordion-header', '#444c56');
+      color('.mbr-text', '#a0b0c0');
+      color('.mbr-section-title', '#ffffff');
+      color('.mbr-white', '#ffffff');
+      var node = document.querySelector('head');
+      node.insertAdjacentHTML('afterend', '<style>amp-accordion.accordion.mbr-pt-4.i-amphtml-element.i-amphtml-layout-container.i-amphtml-built.i-amphtml-layout > section { background-color: #444c56!important }</style>')
+    }
+  </script>
 </body>
 </html>
