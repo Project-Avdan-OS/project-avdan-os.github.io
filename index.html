@@ -441,7 +441,7 @@ body{font-family: Inter;}blockquote{border-color: #005af0;}div[submit-success] >
         document.getElementById('themeswitch').classList.add('light')
       }
     }
-    if(darktheme) {
+    if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || darktheme) {
       runDarkMode()
     } else {
       document.getElementById('themeswitch').classList.remove('dark')
@@ -454,12 +454,6 @@ body{font-family: Inter;}blockquote{border-color: #005af0;}div[submit-success] >
     function hider(){
       console.log("done")
       document.getElementById("hider").style.display = "none";
-    }
-  </script>
-  <script>
-    if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) || darktheme) {
-      // darkmode
-
     }
   </script>
 </body>
