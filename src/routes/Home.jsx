@@ -5,12 +5,33 @@ export const Home = () => {
 
   const changeCurrentTab = (tab) => {
     setCurrentTab(tab);
-    console.log(tab)
-  }
+    console.log(tab);
+  };
+
+  const [tabContents, setTabContents] = useState([
+    {
+      title: "Performance",
+      content:
+        "AvdanOS is built to be the best possible operating system for your computer. It is optimized for performance and is optimized for your needs.",
+      icon: "rocket",
+    },
+    {
+      title: "Effective Security",
+      content:
+        "The only software you need. No need to install another antivirus for your operating system!",
+      icon: "shield-halved",
+    },
+    {
+      title: "Excellent UI",
+      content:
+        "It is being made to be both intuitive and easy to use. It will feature an excellent user interface that will make your life easier.",
+      icon: "tv",
+    },
+  ]);
 
   return (
-    <div className="container mx-auto py-5 overflow-hidden">
-      <div className="grid grid-cols-3 w-full h-screen place-items-center gap-5">
+    <div className="mb-5">
+      <div className="grid grid-cols-3 w-full h-screen place-items-center gap-5 container mx-auto py-5 overflow-hidden">
         <div>
           <span className="text-7xl font-bold">
             Your PC, even{" "}
@@ -39,50 +60,34 @@ export const Home = () => {
           />
         </div>
       </div>
-      <div className="mb-5 px-16 grid-rows-2 grid">
-        <div className="grid grid-cols-3 w-full justify-center items-center">
-          <button onClick={() => changeCurrentTab(0)} className="border-4 bg-clip-border bg-gradient-to-r from-fuchsia-500 via-purple-400 to-sky-400">
-            <div className="flex flex-col justify-center items-center py-6 bg-black font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-purple-400 to-sky-400">
-              <i className="fa-solid fa-rocket text-4xl"></i>
-              Performance
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#e11d48"
+          fill-opacity="1"
+          d="M0,192L1440,0L1440,320L0,320Z"
+        ></path>
+      </svg>
+      <div className="bg-rose-600">
+        <div className="container grid-cols-3 grid gap-5 w-full mx-auto">
+          {tabContents.map((el, index) => (
+            <div key={index} className="bg-zinc-50 rounded-md px-10 py-3">
+              <div className="flex items-center text-2xl py-6 bg-black font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-violet-400">
+                <i className={`fa-solid fa-${el.icon} text-4xl mr-3`}></i>
+                {el.title}
+              </div>
+              <p className="text-black mb-6">{el.content}</p>
             </div>
-          </button>
-
-          <button onClick={() => changeCurrentTab(1)} className="bg-white hover:bg-slate-100 text-black px-5 py-4 rounded-full w-full font-medium text-xl transition-all duration-200">
-            Security
-          </button>
-          <button onClick={() => changeCurrentTab(2)} className="bg-white hover:bg-slate-100 text-black px-5 py-4 rounded-full w-full font-medium text-xl transition-all duration-200">
-            UI
-          </button>
+          ))}
         </div>
-        {currentTab === 0 ? (
-          <div className="w-full mx-auto rounded-lg p-5 bg-gray-700 flex flex-col justify-center items-center">
-            <h1 className="text-3xl font-bold mb-3">Performance</h1>
-            <p className="max-w-lg text-center text-lg">
-              AvdanOS is built to be the best possible operating system for your
-              computer. It is optimized for performance and is optimized for
-              your needs.
-            </p>
-          </div>
-        ) : currentTab === 1 ? (
-          <div className="max-w-2xl mx-auto rounded-lg p-5 bg-gray-700 flex flex-col justify-center items-center">
-            <h1 className="text-3xl font-bold mb-3">Effective Security</h1>
-            <p className="max-w-lg text-center text-lg">
-              The only software you need. No need to install another antivirus
-              for your operating system!
-            </p>
-          </div>
-        ) : (
-          <div className="max-w-2xl mx-auto rounded-lg p-5 bg-gray-700 flex flex-col justify-center items-center">
-            <h1 className="text-3xl font-bold mb-3">Excellent UI</h1>
-            <p className="max-w-lg text-center text-lg">
-              It is being made to be both intuitive and easy to use. It will
-              feature an excellent user interface that will make your life
-              easier.
-            </p>
-          </div>
-        )}
       </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#e11d48"
+          fill-opacity="1"
+          d="M0,192L1440,0L1440,0L0,0Z"
+        ></path>
+      </svg>
+
       <div className="bg-gray-800 flex justify-between items-center py-5 rounded-md shadow">
         <div className="mx-8 font-bold text-2xl">
           Interested? Give it a try!
