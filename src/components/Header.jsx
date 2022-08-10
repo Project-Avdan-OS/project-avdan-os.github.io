@@ -65,7 +65,7 @@ export const Header = () => {
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
                   aria-current="page"
                 >
                   Features
@@ -73,28 +73,28 @@ export const Header = () => {
 
                 <a
                   href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
                 >
                   Requirements
                 </a>
 
                 <a
                   href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
                 >
                   News
                 </a>
 
                 <a
                   href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
                 >
                   Team
                 </a>
 
                 <a
                   href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
                 >
                   Docs
                 </a>
@@ -111,7 +111,7 @@ export const Header = () => {
               </a> */}
               <a
                 href="https://discord.io/avdanos"
-                className="bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 py-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer"
+                className="bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 py-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
               >
                 <i className="fa-brands fa-discord mr-2"></i> Join Discord For
                 Updates!

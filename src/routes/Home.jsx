@@ -27,7 +27,50 @@ export const Home = () => {
         "It is being made to be both intuitive and easy to use. It will feature an excellent user interface that will make your life easier.",
       icon: "tv",
     },
+    {
+      title: "Performance",
+      content:
+        "Ultra-fast speed and performance are the first objectives of AvdanOS.",
+      icon: "lightbulb",
+    },
+    {
+      title: "Engagements",
+      content:
+        "It will be the most interactive and engaging operating system you will ever use.",
+      icon: "thumbs-up",
+    },
+    {
+      title: "Flexibility",
+      content: "The OS can be changed to fit all your needs!",
+      icon: "face-grin-hearts",
+    },
   ]);
+
+  const [faq, setFaq] = useState([
+    {
+      question: "Is AvdanOS open-source?",
+      answer:
+        "Yes! It is completely open-source. You can use it on your own, or you can use it as a base for your own project.",
+    },
+    {
+      question: "Is Avdan OS totally free?",
+      answer: "Yes! It is completely free as it is open-source.",
+    },
+    {
+      question: "How to download AvdanOS?",
+      answer:
+        "AvdanOS is not yet available. But the team is making efforts to serve it to you A.S.A.P.!",
+    },
+  ]);
+
+  const [activeFaq, setActiveFaq] = useState(null);
+  const handleFaq = (index) => {
+    if (activeFaq === index) {
+      setActiveFaq(null);
+    } else {
+      setActiveFaq(index);
+    }
+  };
 
   return (
     <div className="mb-5">
@@ -46,7 +89,7 @@ export const Home = () => {
           </p>
           <a
             href="https://dynamicos.netlify.app/"
-            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer"
+            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
           >
             <i className="fa-solid fa-window-maximize mr-2"></i> Try it in your
             browser
@@ -88,6 +131,38 @@ export const Home = () => {
         ></path>
       </svg>
 
+      <div className="container mx-auto mb-10">
+        <h1 className="text-4xl font-bold mb-5">FAQ's</h1>
+        <div className="grid gap-10">
+          {faq.map((el, index) => (
+            <div key={index} className="row-span-1">
+              <button
+                onClick={() => handleFaq(index)}
+                className={`bg-gray-700 p-5${
+                  index === activeFaq ? " rounded-b-none" : ""
+                } rounded-md flex justify-between w-full focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600`}
+              >
+                <h1 className="text-2xl">{el.question}</h1>
+                {activeFaq !== null && activeFaq === index ? (
+                  <i className="fa-solid fa-chevron-up text-2xl text-slate-200"></i>
+                ) : (
+                  <i className="fa-solid fa-chevron-down text-2xl text-slate-200"></i>
+                )}
+              </button>
+              {activeFaq !== null && activeFaq === index && (
+                <div
+                  className={`bg-slate-50 p-5 text-gray-900 rounded-b-md${
+                    activeFaq !== null && activeFaq === index ? " fade-in" : ""
+                  }`}
+                >
+                  <p>{el.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="bg-gray-800 flex justify-between items-center py-5 rounded-md shadow">
         <div className="mx-8 font-bold text-2xl">
           Interested? Give it a try!
@@ -95,14 +170,14 @@ export const Home = () => {
         <div className="grid grid-cols-2 gap-5 mx-8">
           <a
             href="https://dynamicos.netlify.app/"
-            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer"
+            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
           >
             <i className="fa-solid fa-window-maximize mr-2"></i> Try it in your
             browser
           </a>
           <a
             href="/download"
-            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-emerald-500 to-emerald-700 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer"
+            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-emerald-500 to-emerald-700 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
           >
             <i className="fa-solid fa-download mr-2"></i> Download Now!
           </a>

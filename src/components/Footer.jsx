@@ -21,7 +21,7 @@ export const Footer = () => {
       <div className="text-lg">
         Concept credit to{" "}
         <a
-        className="underline text-slate-200"
+        className="underline text-slate-200 focus:outline-none focus:text-rose-600"
           href="https://www.youtube.com/c/Avdan"
           title="Avdan's Youtube Channel"
         >
