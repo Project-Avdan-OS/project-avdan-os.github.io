@@ -26,3 +26,4 @@ dist-ssr
 /*.log
 .idea/
 pull-upstream.bat
+pr.bat

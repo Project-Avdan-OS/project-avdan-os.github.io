@@ -3,6 +3,10 @@ import { useState } from "preact/hooks";
 export const Home = () => {
   const [currentTab, setCurrentTab] = useState(0);
 
+  const changeCurrentTab = (tab) => {
+    setCurrentTab(tab);
+  }
+
   return (
     <div className="container mx-auto py-5 overflow-hidden">
       <div className="grid grid-cols-3 w-full h-screen place-items-center gap-5">
@@ -36,17 +40,17 @@ export const Home = () => {
       </div>
       <div className="mb-5 px-16 grid-rows-2 grid">
         <div className="grid grid-cols-3 w-full justify-center items-center">
-          <button className="border-4 bg-clip-border bg-gradient-to-r from-fuchsia-500 via-purple-400 to-sky-400">
+          <button onClick={changeCurrentTab(0)} className="border-4 bg-clip-border bg-gradient-to-r from-fuchsia-500 via-purple-400 to-sky-400">
             <div className="flex flex-col justify-center items-center py-6 bg-black font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-purple-400 to-sky-400">
               <i className="fa-solid fa-rocket text-4xl"></i>
               Performance
             </div>
           </button>
 
-          <button className="bg-white hover:bg-slate-100 text-black px-5 py-4 rounded-full w-full font-medium text-xl transition-all duration-200">
+          <button onClick={changeCurrentTab(1)} className="bg-white hover:bg-slate-100 text-black px-5 py-4 rounded-full w-full font-medium text-xl transition-all duration-200">
             Security
           </button>
-          <button className="bg-white hover:bg-slate-100 text-black px-5 py-4 rounded-full w-full font-medium text-xl transition-all duration-200">
+          <button onClick={changeCurrentTab(2)} className="bg-white hover:bg-slate-100 text-black px-5 py-4 rounded-full w-full font-medium text-xl transition-all duration-200">
             UI
           </button>
         </div>
