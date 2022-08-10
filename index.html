@@ -421,35 +421,30 @@ body{font-family: Inter;}blockquote{border-color: #005af0;}div[submit-success] >
       document.getElementById('themeswitch').classList.remove('light')
       document.getElementById('themeswitch').classList.add('dark')
     }
-    function toggleTheme() {
-      darktheme = !darktheme;
-      if(darktheme) {
-        runDarkMode()
-      } else {
-        bgcolor('section', '#ffffff');
-        bg('div.tab-content.mbr-p-4.text-black', '#f7f7f7');
-        bg('header.section-title.i-amphtml-accordion-header', '#ffffff');
-        color('.mbr-text', '#48525c');
-        color('.mbr-section-title', '#48525c');
-        color('.mbr-white', '#48525c');
-        color('.mbr-section-title', 'black');
-        color('.mbr-text.align-left.mbr-fonts-style.mbr-regular.mbr-white.display-7', 'white')
-        color('.mbr-section-title.align-left.mbr-fonts-style.mbr-bold.mbr-white.mbr-pb-2.display-2', 'white')
-        var node = document.querySelector('head');
-        node.insertAdjacentHTML('afterend', '<style>amp-accordion.accordion.mbr-pt-4.i-amphtml-element.i-amphtml-layout-container.i-amphtml-built.i-amphtml-layout > section { background-color: white!important }</style>')
-        document.getElementById('themeswitch').classList.remove('dark')
-        document.getElementById('themeswitch').classList.add('light')
-      }
-    }
-    if(darktheme) {
-      runDarkMode()
-    } else {
+    function runLightMode() {
+      bgcolor('section', '#ffffff');
+      bg('div.tab-content.mbr-p-4.text-black', '#f7f7f7');
+      bg('header.section-title.i-amphtml-accordion-header', '#ffffff');
+      color('.mbr-text', '#48525c');
+      color('.mbr-section-title', '#48525c');
+      color('.mbr-white', '#48525c');
+      color('.mbr-section-title', 'black');
+      color('.mbr-text.align-left.mbr-fonts-style.mbr-regular.mbr-white.display-7', 'white')
+      color('.mbr-section-title.align-left.mbr-fonts-style.mbr-bold.mbr-white.mbr-pb-2.display-2', 'white')
+      var node = document.querySelector('head');
+      node.insertAdjacentHTML('afterend', '<style>amp-accordion.accordion.mbr-pt-4.i-amphtml-element.i-amphtml-layout-container.i-amphtml-built.i-amphtml-layout > section { background-color: white!important }</style>')
       document.getElementById('themeswitch').classList.remove('dark')
       document.getElementById('themeswitch').classList.add('light')
     }
+    function toggleTheme() {
+      darktheme = !darktheme;
+      if (darktheme) {
+        runDarkMode()
+      } else {
+        runLightMode()
+      }
+    }
   </script>
-
-
   <script>
     function hider(){
       console.log("done")
