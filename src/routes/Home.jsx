@@ -30,8 +30,23 @@ export const Home = () => {
           />
         </div>
       </div>
+      <div className="mb-5">
+        <div className="flex w-full justify-center items-center">
+          <button className="bg-gradient-to-r bg-pos-0 bg-size-200 hover:bg-pos-100 from-blue-600 to-indigo-700 px-5 py-4 rounded-full mx-3 w-44 font-medium text-xl transition-all duration-200">
+            Performance
+          </button>
+          <button className="bg-white hover:bg-slate-100 text-black px-5 py-4 rounded-full mx-3 w-44 font-medium text-xl transition-all duration-200">
+            Security
+          </button>
+          <button className="bg-white hover:bg-slate-100 text-black px-5 py-4 rounded-full mx-3 w-44 font-medium text-xl transition-all duration-200">
+            UI
+          </button>
+        </div>
+      </div>
       <div className="bg-gray-800 flex justify-between items-center py-5 rounded-md shadow">
-        <div className="mx-8 font-bold text-2xl">Interested? Give it a try!</div>
+        <div className="mx-8 font-bold text-2xl">
+          Interested? Give it a try!
+        </div>
         <div className="grid grid-cols-2 gap-5 mx-8">
           <a
             href="https://dynamicos.netlify.app/"
