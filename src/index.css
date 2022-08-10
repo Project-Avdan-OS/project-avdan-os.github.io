@@ -16,3 +16,20 @@ body {
   width: 100vw;
   position: absolute;
 }
+
+.fade-in {
+  animation: slide-in .2s linear;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  70% {
+    opacity: 100;
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
