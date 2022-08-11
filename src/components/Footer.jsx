@@ -1,8 +1,8 @@
 export const Footer = () => {
   return (
-    <div className="bg-gradient-to-r from-gray-800 to-slate-800 p-6 flex justify-between items-center">
-      <div className="flex items-center justify-center">
-        <div className="w-16 h-16 bg-white rounded-md inline-block">
+    <div className="bg-gradient-to-r from-gray-800 to-slate-800 p-6 grid grid-cols-3 place-items-center">
+      <div className="flex items-center col-span-3 place-self-center md:place-self-start md:col-span-2">
+        <div className="w-16 h-16 bg-white rounded-md flex">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <image
               id="Main"
@@ -14,14 +14,20 @@ export const Footer = () => {
             />
           </svg>
         </div>
-        <span className="ml-5 text-lg font-medium">
+        <span className="ml-5 text-lg font-medium hidden md:inline-block">
           Copyright © 2022 AvdanOS - All Rights Reserved
         </span>
       </div>
-      <div className="text-lg">
-        Concept credit to{" "}
+      <span className="col-span-3 text-lg text-center mt-3 block md:hidden font-medium">
+        Copyright © 2022 AvdanOS
+      </span>
+      <span className="col-span-3 text-lg text-center block md:hidden font-medium">
+        All Rights Reserved
+      </span>
+      <div className="text-lg place-self-end flex items-center h-full w-full md:justify-end justify-center col-span-3 md:col-span-1 mt-3">
+        Concept credit to<span className="w-2"> </span>
         <a
-        className="underline text-slate-200 focus:outline-none focus:text-rose-600"
+          className="underline text-slate-200 focus:outline-none focus:text-rose-600"
           href="https://www.youtube.com/c/Avdan"
           title="Avdan's Youtube Channel"
         >
