@@ -4,7 +4,7 @@
 
 html,
 body {
-  cursor: url("assets/img/cursor_avdanos.png"), auto;
+  cursor: url("assets/img/cursor_avdanos.png"), default;
 }
 
 * {

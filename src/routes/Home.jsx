@@ -74,9 +74,20 @@ export const Home = () => {
 
   return (
     <div className="mb-5">
-      <div className="grid grid-cols-3 w-full h-screen place-items-center gap-5 container mx-auto py-5 overflow-hidden">
-        <div>
-          <span className="text-7xl font-bold">
+      <div className="grid md:grid-cols-3 w-full h-screen place-items-center gap-5 container mx-auto py-5 overflow-hidden md:px-3 lg:px-5">
+        <div
+          className="md:hidden col-span-2 w-full h-full opacity-40"
+          style={{
+            backgroundImage:
+              "url(https://raw.githubusercontent.com/Project-Avdan-OS/project-avdan-os.github.io/main/assets/images/desktop-1456x819.png)",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        ></div>
+
+        <div className="absolute md:relative mx-5">
+          <span className="text-4xl md:text-5xl xl:text-7xl font-bold bg-gray-800 md:bg-transparent">
             Your PC, even{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
               better
@@ -89,33 +100,33 @@ export const Home = () => {
           </p>
           <a
             href="https://dynamicos.netlify.app/"
-            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
+            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
           >
             <i className="fa-solid fa-window-maximize mr-2"></i> Try it in your
             browser
           </a>
         </div>
 
-        <div className="col-span-2">
+        <div className="col-span-2 hidden md:block">
           <img
             src="https://raw.githubusercontent.com/Project-Avdan-OS/project-avdan-os.github.io/main/assets/images/desktop-1456x819.png"
             alt=""
           />
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 310">
         <path
           fill="#e11d48"
           fill-opacity="1"
-          d="M0,192L1440,0L1440,320L0,320Z"
+          d="M0,288L1440,96L1440,320L0,320Z"
         ></path>
       </svg>
-      <div className="bg-rose-600">
-        <div className="container grid-cols-3 grid gap-5 w-full mx-auto">
+      <div className="bg-rose-600 my-0 py-0">
+        <div className="container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid gap-5 w-full md:mx-auto px-12">
           {tabContents.map((el, index) => (
             <div key={index} className="bg-zinc-50 rounded-md px-10 py-3">
-              <div className="flex items-center text-2xl py-6 bg-black font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-violet-400">
-                <i className={`fa-solid fa-${el.icon} text-4xl mr-3`}></i>
+              <div className="flex items-center text-sm sm:text-2xl py-6 bg-black font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-violet-400">
+                <i className={`fa-solid fa-${el.icon} text-3xl md:text-4xl mr-3`}></i>
                 {el.title}
               </div>
               <p className="text-black mb-6">{el.content}</p>
@@ -123,7 +134,7 @@ export const Home = () => {
           ))}
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1420 320">
         <path
           fill="#e11d48"
           fill-opacity="1"
@@ -131,7 +142,7 @@ export const Home = () => {
         ></path>
       </svg>
 
-      <div className="container mx-auto mb-10">
+      <div className="container px-5 lg:mx-auto mb-10">
         <h1 className="text-4xl font-bold mb-5">FAQ's</h1>
         <div className="grid gap-10">
           {faq.map((el, index) => (
@@ -164,25 +175,32 @@ export const Home = () => {
       </div>
 
       <div className="bg-gradient-to-r from-blue-600 via-violet-700 to-rose-600">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-3 w-full h-screen place-items-center gap-5">
+        <div className="container mx-auto px-5">
+          <div className="grid lg:grid-cols-3 w-full h-screen place-items-center gap-5">
             <div className="col-span-2">
-              <span className="text-7xl font-bold">
+              <span className="text-4xl md:text-7xl font-bold">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-purple-400 to-sky-400">
                   AvdanOS
                 </span>{" "}
                 is under development
               </span>
-              <p className="text-sm text-slate-400 mt-5 mb-10">
+              <p className="text-sm text-slate-400 mt-5 lg:mb-10">
                 If you are a developer or a designer then please join us to make
                 it real. Even if you're not, join us to show your support.
               </p>
             </div>
 
-            <div className="col-span-1">
+            <div className="col-span-2 lg:col-span-1 w-full">
               <a
                 href="https://discord.io/avdanos"
-                className="bg-gradient-to-r bg-size-200 bg-pos-0 text-2xl from-indigo-600 to-indigo-800 py-5 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-10 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
+                className="inline-block lg:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center w-full text-lg"
+              >
+                <i className="fa-brands fa-discord mr-2"></i> Join Discord For
+                Updates!
+              </a>
+              <a
+                href="https://discord.io/avdanos"
+                className="hidden lg:inline-block bg-gradient-to-r bg-size-200 bg-pos-0 text-xl from-indigo-600 to-indigo-800 py-5 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-10 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
               >
                 <i className="fa-brands fa-discord mr-2"></i> Join Discord For
                 Updates!

@@ -12,6 +12,8 @@ export const Header = () => {
     { name: "Calendar", href: "#", current: false },
   ]);
 
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="bg-gray-800">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -19,6 +21,7 @@ export const Header = () => {
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               type="button"
+              onClick={() => setOpen(!open)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
@@ -28,7 +31,7 @@ export const Header = () => {
             </button>
           </div>
           <a
-            className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
+            className="flex-1 flex items-center justify-start ml-12 sm:items-stretch sm:justify-start"
             href="/"
           >
             <div className="flex-shrink-0 flex items-center">
@@ -111,48 +114,63 @@ export const Header = () => {
               </a> */}
               <a
                 href="https://discord.io/avdanos"
-                className="bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 py-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
+                className="hidden lg:block bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 py-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm"
               >
                 <i className="fa-brands fa-discord mr-2"></i> Join Discord For
                 Updates!
+              </a>
+              <a
+                href="https://discord.io/avdanos"
+                className="hidden sm:block lg:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 py-2 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-3 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm"
+              >
+                <i className="fa-brands fa-discord mr-2"></i> Discord
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="sm:hidden" id="mobile-menu">
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          <a
-            href="#"
-            className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-            aria-current="page"
-          >
-            Dashboard
-          </a>
+      {open && (
+        <div className="sm:hidden" id="mobile-menu">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            <a
+              href="#"
+              className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+              aria-current="page"
+            >
+              Dashboard
+            </a>
 
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Team
-          </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Team
+            </a>
 
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Projects
-          </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Projects
+            </a>
 
-          <a
-            href="#"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            Calendar
-          </a>
+            <a
+              href="#"
+              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Calendar
+            </a>
+            <a
+                href="https://discord.io/avdanos"
+                className="block sm:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 py-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
+              >
+                <i className="fa-brands fa-discord mr-2"></i> Join Discord For
+                Updates!
+              </a>
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
