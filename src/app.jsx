@@ -9,8 +9,8 @@ export const App = () => {
     <div className="bg-gray-900 text-white">
       <Header />
       <Router>
-        <Home path="/" />
-        <Download path="/download" />
+        <Home path="/project-avdan-os.github.io/" />
+        <Download path="/project-avdan-os.github.io/download" />
       </Router>
       <Footer />
     </div>
