@@ -1,10 +1,6 @@
 import React from '../react-wrapper.js';
 import { useState } from "preact/hooks";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export const Header = () => {
   // const [navigation, setNavigation] = useState([
   //   { name: "Features", href: "/features" },
@@ -14,11 +10,15 @@ export const Header = () => {
   //   { name: "Docs", href: "/docs" },
   // ]);
   const [navigation, setNavigation] = useState([
+    { name: "Home", href: "/" },
     { name: "Features", href: "/features" },
-    { name: "Demo", href: "https://dynamicos.netlify.app/" },
+    { name: "Demo", href: "https://dynamicos.netlify.app/", target: "_blank" },
     { name: "Docs", href: "/docs" },
-    { name: "Github", href: "https://github.com/Project-Avdan-OS" },
+    { name: "Github", href: "https://github.com/Project-Avdan-OS", target: "_blank" },
   ]);
+  const [active, setActive] = useState(window.location.pathname);
+  const activeClass = "bg-gray-900 block text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700";
+  const inactiveClass = "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700";
 
   const [open, setOpen] = useState(false);
 
@@ -81,13 +81,11 @@ export const Header = () => {
                 {navigation.map((el, index) => (
                   <a
                     key={index}
+                    target={el.target || "_self"}
                     href={el.href}
                     title={el.name}
-                    className={classNames(
-                      el.href === window.location.pathname
-                        ? "bg-gray-900 block text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                        : "text-gray-300 block hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                    )}
+                    onClick={() => setActive(el.href)}
+                    className={active === el.href ? activeClass : inactiveClass}
                     aria-current={
                       el.href === window.location.pathname ? "page" : undefined
                     }
@@ -131,11 +129,10 @@ export const Header = () => {
               <a
                 key={index}
                 href={el.href}
-                className={classNames(
-                  el.href === window.location.pathname
+                className={
+                active === el.href
                     ? "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                    : "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                )}
+                    : "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"}
                 aria-current={
                   el.href === window.location.pathname ? "page" : undefined
                 }
