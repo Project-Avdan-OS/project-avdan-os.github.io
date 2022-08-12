@@ -1,3 +1,5 @@
+import React from '../react-wrapper.js';
+
 export const Download = () => {
   return (
     <div>
