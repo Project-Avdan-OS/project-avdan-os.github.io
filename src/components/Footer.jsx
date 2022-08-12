@@ -1,3 +1,5 @@
+import React from '../react-wrapper.js';
+
 export const Footer = () => {
   return (
     <div className="bg-gradient-to-r from-gray-800 to-slate-800 p-6 grid grid-cols-3 place-items-center">
