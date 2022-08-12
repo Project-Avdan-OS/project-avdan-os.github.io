@@ -72,6 +72,8 @@ export const Home = () => {
     }
   };
 
+  const [tryBrowser, setTryBrowser] = useState(false);
+
   return (
     <div className="mb-5">
       <div className="grid md:grid-cols-3 w-full h-screen place-items-center gap-5 container mx-auto py-5 overflow-hidden md:px-3 lg:px-5">
@@ -86,32 +88,60 @@ export const Home = () => {
           }}
         ></div>
 
-        <div className="absolute md:relative mx-5">
-          <span className="text-4xl md:text-5xl xl:text-7xl font-bold bg-gray-800 md:bg-transparent">
-            Your PC, even{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-              better
+        {!tryBrowser && (
+          <div className="absolute md:relative mx-5">
+            <span className="text-4xl md:text-5xl xl:text-7xl font-bold bg-gray-800 md:bg-transparent">
+              Your PC, even{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                better
+              </span>
             </span>
-          </span>
-          <p className="text-sm text-slate-400 mt-3 mb-10">
-            AvdanOS is being made while keeping speed and customization in mind.
-            It is a lightweight, easy to use, and fully customizable operating
-            system.
-          </p>
-          <a
-            href="https://dynamicos.netlify.app/"
-            className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
-          >
-            <i className="fa-solid fa-window-maximize mr-2"></i> Try it in your
-            browser
-          </a>
-        </div>
+            <p className="text-sm text-slate-400 mt-3 mb-10">
+              AvdanOS is being made while keeping speed and customization in
+              mind. It is a lightweight, easy to use, and fully customizable
+              operating system.
+            </p>
+            <button
+              href="https://dynamicos.netlify.app/"
+              onClick={() => setTryBrowser(!tryBrowser)}
+              className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
+            >
+              <i className="fa-solid fa-window-maximize mr-2"></i> Try it in
+              your browser
+            </button>
+          </div>
+        )}
 
-        <div className="col-span-2 hidden md:block">
-          <img
-            src="https://raw.githubusercontent.com/Project-Avdan-OS/project-avdan-os.github.io/main/assets/images/desktop-1456x819.png"
-            alt=""
-          />
+        <div
+          className={`${
+            tryBrowser ? "col-span-3" : "col-span-2"
+          } hidden md:block${tryBrowser ? " w-full h-full" : ""}`}
+        >
+          {tryBrowser && (
+            <>
+              <div className="flex">
+                <button onClick={() => setTryBrowser(!tryBrowser)}>
+                  <i className="fa-solid fa-close font-bold text-xl absolute ml-2 mt-2" />
+                </button>
+
+                <a href="https://dynamicos.netlify.app/">
+                  <i className="fa-solid fa-up-right-from-square font-bold absolute text-base ml-8 mt-2" />
+                </a>
+              </div>
+
+              <iframe
+                src="https://dynamicos.netlify.app/"
+                className="h-full w-full"
+                frameborder="0"
+              ></iframe>
+            </>
+          )}
+          {!tryBrowser && (
+            <img
+              src="https://raw.githubusercontent.com/Project-Avdan-OS/project-avdan-os.github.io/main/assets/images/desktop-1456x819.png"
+              alt=""
+            />
+          )}
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 310">
