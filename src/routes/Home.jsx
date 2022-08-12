@@ -191,6 +191,7 @@ export const Home = () => {
 
                         <div className="col-span-2 lg:col-span-1 w-full">
                             <a
+                                target="_blank"
                                 href="https://discord.io/avdanos"
                                 className="inline-block lg:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center w-full text-lg"
                             >
@@ -198,6 +199,7 @@ export const Home = () => {
                                 Updates!
                             </a>
                             <a
+                                target="_blank"
                                 href="https://discord.io/avdanos"
                                 className="hidden lg:inline-block bg-gradient-to-r bg-size-200 bg-pos-0 text-xl from-indigo-600 to-indigo-800 py-5 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-10 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
                             >
