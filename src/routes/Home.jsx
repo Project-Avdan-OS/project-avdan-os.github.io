@@ -104,11 +104,18 @@ export const Home = () => {
             <button
               href="https://dynamicos.netlify.app/"
               onClick={() => setTryBrowser(!tryBrowser)}
-              className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
+              className="hidden lg:inline-block bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
             >
               <i className="fa-solid fa-window-maximize mr-2"></i> Try it in
               your browser
             </button>
+            <a
+              href="https://dynamicos.netlify.app/"
+              className="inline-block lg:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
+            >
+              <i className="fa-solid fa-window-maximize mr-2"></i> Try it in
+              your browser
+            </a>
           </div>
         )}
 
@@ -206,6 +213,7 @@ export const Home = () => {
         </div>
       </div>
 
+      {/* If AvdanOS is not out yet */}
       <div className="bg-gradient-to-r from-blue-600 via-violet-700 to-rose-600">
         <div className="container mx-auto px-5">
           <div className="grid lg:grid-cols-3 w-full h-screen place-items-center gap-5">
@@ -241,6 +249,41 @@ export const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* AvdanOS already out! */}
+      {/* <div className="bg-gradient-to-r from-emerald-600 via-blue-700 to-rose-600">
+        <div className="container mx-auto px-5">
+          <div className="grid lg:grid-cols-3 w-full h-screen place-items-center gap-5">
+            <div className="col-span-2">
+              <span className="text-4xl md:text-7xl font-bold">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-500 via-purple-400 to-sky-400">
+                  AvdanOS
+                </span>{" "}
+                is now available
+              </span>
+              <p className="text-sm text-slate-200 mt-5 lg:mb-10">
+                Download the latest version of AvdanOS, for desktop PCs and
+                laptops.
+              </p>
+            </div>
+
+            <div className="col-span-2 lg:col-span-1 w-full">
+              <a
+                href="#lead_to_download_file"
+                className="inline-block lg:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-emerald-500 to-emerald-700 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center w-full text-lg"
+              >
+                <i className="fa-solid fa-download mr-2"></i> Download Now
+              </a>
+              <a
+                href="#lead_to_download_file"
+                className="hidden lg:inline-block bg-gradient-to-r bg-size-200 bg-pos-0 text-xl from-emerald-500 to-emerald-700 py-5 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-10 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
+              >
+                <i className="fa-solid fa-download mr-2"></i> Download Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> */}
 
       {/* <div className="bg-gray-800 flex justify-between items-center py-5 rounded-md shadow">
         <div className="mx-8 font-bold text-2xl">

@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Home } from "./routes/Home";
 import { Download } from "./routes/Download";
+import { Features } from "./routes/Features";
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
         <Home path="/" />
         {/* <Download path="/project-avdan-os.github.io/download" /> */}
         <Download path="/download" />
+        <Features path="/features" />
       </Router>
       <Footer />
     </div>
