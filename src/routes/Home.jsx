@@ -125,8 +125,10 @@ export const Home = () => {
         <div className="container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid gap-5 w-full md:mx-auto px-12">
           {tabContents.map((el, index) => (
             <div key={index} className="bg-zinc-50 rounded-md px-10 py-3">
-              <div className="flex items-center text-sm sm:text-2xl py-6 bg-black font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-violet-400">
-                <i className={`fa-solid fa-${el.icon} text-3xl md:text-4xl mr-3`}></i>
+              <div className="flex items-center text-lg font-bold sm:text-2xl py-6 bg-black md:font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-violet-400">
+                <i
+                  className={`fa-solid fa-${el.icon} text-3xl md:text-4xl mr-3`}
+                ></i>
                 {el.title}
               </div>
               <p className="text-black mb-6">{el.content}</p>

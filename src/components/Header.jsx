@@ -6,10 +6,10 @@ function classNames(...classes) {
 
 export const Header = () => {
   const [navigation, setNavigation] = useState([
-    { name: "Features", href: "/features", current: true },
-    { name: "Requirements", href: "#", current: false },
-    { name: "Projects", href: "#", current: false },
-    { name: "Calendar", href: "#", current: false },
+    { name: "Features", href: "/features" },
+    { name: "Requirements", href: "#" },
+    { name: "Projects", href: "#" },
+    { name: "Calendar", href: "#" },
   ]);
 
   const [open, setOpen] = useState(false);
@@ -66,41 +66,22 @@ export const Header = () => {
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                  aria-current="page"
-                >
-                  Features
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                >
-                  Requirements
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                >
-                  News
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                >
-                  Team
-                </a>
-
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
-                >
-                  Docs
-                </a>
+                {navigation.map((el, index) => (
+                  <a
+                    key={index}
+                    href={el.href}
+                    className={classNames(
+                      el.href === window.location.pathname
+                        ? "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
+                        : "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
+                    )}
+                    aria-current={
+                      el.href === window.location.pathname ? "page" : undefined
+                    }
+                  >
+                    {el.name}
+                  </a>
+                ))}
               </div>
             </div>
           </a>
@@ -133,41 +114,34 @@ export const Header = () => {
       {open && (
         <div className="sm:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a
-              href="#"
-              className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-              aria-current="page"
-            >
-              Dashboard
-            </a>
-
-            <a
-              href="#"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Team
-            </a>
-
-            <a
-              href="#"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Projects
-            </a>
-
-            <a
-              href="#"
-              className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Calendar
-            </a>
-            <a
-                href="https://discord.io/avdanos"
-                className="block sm:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 py-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
+            {navigation.map((el, index) => (
+              <a
+                href={el.href}
+                className={classNames(
+                  el.href === window.location.pathname
+                    ? "bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
+                    : "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium focus:outline-none focus:text-rose-600 focus:bg-gray-700"
+                )}
+                aria-current={
+                  el.href === window.location.pathname ? "page" : undefined
+                }
               >
-                <i className="fa-brands fa-discord mr-2"></i> Join Discord For
-                Updates!
+                {el.name}
               </a>
+            ))}
+            {/* <a
+              href="/download"
+              className="block bg-gradient-to-r bg-size-200 bg-pos-0 from-emerald-500 to-emerald-700 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer  focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
+            >
+              <i className="fa-solid fa-download mr-2"></i> Download Now
+            </a> */}
+            <a
+              href="https://discord.io/avdanos"
+              className="block sm:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-indigo-600 to-indigo-800 py-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center"
+            >
+              <i className="fa-brands fa-discord mr-2"></i> Join Discord For
+              Updates!
+            </a>
           </div>
         </div>
       )}
