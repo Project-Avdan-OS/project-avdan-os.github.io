@@ -101,21 +101,28 @@ export const Home = () => {
               mind. It is a lightweight, easy to use, and fully customizable
               operating system.
             </p>
-            <button
+            {/* <button
               href="https://dynamicos.netlify.app/"
               onClick={() => setTryBrowser(!tryBrowser)}
               className="hidden lg:inline-block bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
             >
               <i className="fa-solid fa-window-maximize mr-2"></i> Try it in
               your browser
-            </button>
+            </button> */}
             <a
+              href="https://dynamicos.netlify.app/"
+              className="bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
+            >
+              <i className="fa-solid fa-window-maximize mr-2"></i> Try it in
+              your browser
+            </a>
+            {/* <a
               href="https://dynamicos.netlify.app/"
               className="inline-block lg:hidden bg-gradient-to-r bg-size-200 bg-pos-0 from-blue-500 to-indigo-800 p-3 font-medium rounded-md hover:bg-pos-100 transition-all duration-150 px-5 cursor-pointer focus:outline-none focus:ring-rose-600 focus:border-4 focus:border-rose-600 text-center text-sm lg:text-lg"
             >
               <i className="fa-solid fa-window-maximize mr-2"></i> Try it in
               your browser
-            </a>
+            </a> */}
           </div>
         )}
 
